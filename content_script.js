@@ -1,11 +1,11 @@
-// This script runs on the Ginko page after clicking 'send'
+// This script runs on the vm page after clicking 'send'
 // It reads from localStorage, and loops through the characters in chunks
 // For each chunk, put into the text field and click 'Post Text to VM' button
 // Can adjust delays, and size of chunk
 
 // Setup Constants
-const postTextToVmTextfieldId = "pasteTextInput"; // set by ginko
-const postTextToVmButtonId = "pasteTextButton"; // set by ginko
+const postTextToVmTextfieldId = "pasteTextInput"; // set by target website
+const postTextToVmButtonId = "pasteTextButton";
 
 const sizeToPaste = 400;
 const firstDelay = 800; // ms

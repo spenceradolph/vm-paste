@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Ginko Paste",
-  "description": "Paste Characters into specific text field, then click button, repeating with delay.",
+  "name": "Slow-Paste",
+  "description": "Paste Characters into specific text field, then click a button, repeating with delay.",
   "version": "1.0",
   "permissions": [
     "scripting",
