@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Such Activity",
-  "description": "Wow",
+  "name": "Ginko Paste",
+  "description": "Paste Characters into specific text field, then click button, repeating with delay.",
   "version": "1.0",
   "permissions": [
     "scripting",
@@ -12,7 +12,7 @@
   ],
   "host_permissions": ["<all_urls>"],
   "action": {
-    "default_title": "Click Me",
+    "default_title": "Paste It",
     "default_popup": "popup.html"
   }
 }

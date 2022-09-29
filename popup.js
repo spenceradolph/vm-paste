@@ -1,31 +1,24 @@
-function readFileAsync(file) {
-  return new Promise((resolve, reject) => {
-    let reader = new FileReader();
-    reader.onload = () => {
-      resolve(reader.result);
-    };
-    reader.onerror = reject;
-    reader.readAsArrayBuffer(file);
-  });
-}
+// This Script runs in the extension popup
+// In order to transfer data between the popup and the page
+// Data is sent to localStorage, since both sides have access
 
-function arrayBufferToString(arrayBuffer, decoderType = "utf-8") {
-  let decoder = new TextDecoder(decoderType);
-  return decoder.decode(arrayBuffer);
-}
-
-async function pasteTheThing() {
+const pasteTheThing = async () => {
   var updateTextTo = document.getElementById("btsend").value;
-  console.log(updateTextTo);
-  chrome.storage.local.set({ updateTextTo }, function () {
+
+  console.log(`DataSentToLocalStorage: ${updateTextTo}`);
+
+  // Store Data
+  chrome.storage.local.set({ updateTextTo }, () => {
+    // Get Window
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      // Run content_script
       chrome.scripting.executeScript({
         target: { tabId: tabs[0].id },
-        files: ["content_script3.js"],
+        files: ["content_script.js"],
       });
     });
   });
-}
+};
 
 document
   .getElementById("clickactivity")
