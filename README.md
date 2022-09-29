@@ -19,10 +19,15 @@ For specific use in Ginko, but could be modified for other uses.
 
 ![Screenshot](screenshot.png)
 
+# Known Bugs
+
+- Must refresh if you want to paste something additional after
+
 ## TODO
 
 - Better UI
 - Convert to Typescript
+- Fix bug (extension tries to insert script that now already exists)
 - Add options in UI for adjusting speed / chunkSize
 - Figure out way to 'upload file'
 - Experiment with faster constants
