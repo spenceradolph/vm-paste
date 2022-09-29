@@ -1,6 +1,6 @@
 # Slower VM-Paste Extension
 
-For specific use in Ginko, but could be modified for other uses.
+For those times when you really need a big (encoded) file pasted, but fails mid-way.
 
 # Installation
 
