@@ -25,3 +25,4 @@ For specific use in Ginko, but could be modified for other uses.
 - Convert to Typescript
 - Add options in UI for adjusting speed / chunkSize
 - Figure out way to 'upload file'
+- Experiment with faster constants

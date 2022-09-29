@@ -12,21 +12,21 @@ const firstDelay = 800; // ms
 const secondDelay = 1300; // ms
 
 // Setup Paste Function
-const assignTextToTextareas = async ({ updateTextTo }) => {
-  console.log(`DataReadToLocalStorage: ${updateTextTo}`);
+const pasteAndSend = async ({ textToPaste }) => {
+  console.log(`DataReadToLocalStorage: ${textToPaste}`);
 
-  for (let index = 0; index < updateTextTo.length; index += sizeToPaste) {
-    const charChunk = updateTextTo.slice(index, sizeToPaste + index);
+  for (let index = 0; index < textToPaste.length; index += sizeToPaste) {
+    const charChunk = textToPaste.slice(index, sizeToPaste + index);
 
     document.getElementById(postTextToVmTextfieldId).value = charChunk;
-    await new Promise((resolve) => setTimeout(resolve, firstDelay));
+    await new Promise((resolve) => setTimeout(resolve, firstDelay)); // first delay
 
     document.getElementById(postTextToVmButtonId).click();
-    await new Promise((resolve) => setTimeout(resolve, secondDelay));
+    await new Promise((resolve) => setTimeout(resolve, secondDelay)); // second delay
   }
 };
 
 // Read Data and Execute
-chrome.storage.local.get(["updateTextTo"], async (data) => {
-  await assignTextToTextareas(data);
+chrome.storage.local.get(["textToPaste"], async (data) => {
+  await pasteAndSend(data);
 });

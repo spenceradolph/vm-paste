@@ -2,13 +2,13 @@
 // In order to transfer data between the popup and the page
 // Data is sent to localStorage, since both sides have access
 
-const pasteTheThing = async () => {
-  var updateTextTo = document.getElementById("btsend").value;
+const transferDataToTab = async () => {
+  var textToPaste = document.getElementById("btsend").value;
 
-  console.log(`DataSentToLocalStorage: ${updateTextTo}`);
+  console.log(`DataSentToLocalStorage: ${textToPaste}`);
 
   // Store Data
-  chrome.storage.local.set({ updateTextTo }, () => {
+  chrome.storage.local.set({ textToPaste }, () => {
     // Get Window
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       // Run content_script
@@ -22,4 +22,4 @@ const pasteTheThing = async () => {
 
 document
   .getElementById("clickactivity")
-  .addEventListener("click", pasteTheThing);
+  .addEventListener("click", transferDataToTab);
